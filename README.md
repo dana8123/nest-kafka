@@ -39,3 +39,23 @@
 - producer 실행하여 메세지 전송, `kafka-console-producer.sh`
 - `kafka-reassign-partitions.sh` 토픽의 파티션과 위치 변경 등을 위해 사용
 - `kafka-dump-log.sh` 파티션에 저장된 로그파일의 내용 확인
+
+## 공식문서 읽고 정리한 내용
+
+### event streaming flatform
+
+- 지속적인 읽기(subscribe), 쓰기(publish가 필요한 시스템
+  - 주식, 버스 위치 추적, 지속적인 캡쳐가 필요한 IOT device
+- 원하는 만큼 신뢰성과 내구성을 갖고 이벤트의 스트림을 저장해야함
+- 이벤트가 발생한 시점이나 소급하여 이벤트 스트림을 처리
+
+## how to work
+
+- 고성능 TCP 네트워크 프로토콜을 통해 통신하는 서버와 클라이언트로 구성된 분산 시스템
+- server :
+  - 여러 데이터 센터, 클라우드 리전에 걸쳐 있는 하나 이상의 서버 클러스터로 실행됨
+  - 일부 서버를 브로커라 칭함
+  - 다른 서버는 kafka connect를 실행하여 이벤트 스트림을 지속적으로 가져오고 내보내는 역할을 함
+- client :
+  - 스트림을 병렬로 읽고 쓰고 처리하는 분산 애플리케이션 및 마이크로 서비스를 작성할 수 있음
+  - [clients](https://cwiki.apache.org/confluence/display/KAFKA/Clients)

@@ -26,6 +26,7 @@ export class HeroesController {
   // Outgoing
   //
 
+  // 동기적인 메세지 전송.
   @MessagePattern('hero.kill.dragon')
   killDragon(@Payload() message: KillDragonMessage): any {
     const realm = 'Nest';
@@ -37,6 +38,8 @@ export class HeroesController {
     ];
 
     return {
+      // produceRecord에 해당하는 부분인가?(95page),
+      // 메타데이터를 리턴?
       headers: {
         kafka_nestRealm: realm,
       },
