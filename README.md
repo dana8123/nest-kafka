@@ -32,7 +32,7 @@
 - 아니면 쌍방?
 - client는 마이크로서비스 입장에서의 client? api gateway ?
 
-##
+## 명령어
 
 - 토픽 생성 `kafka-topics.sh`
 - consumer 실행 `kafka-console-producer.sh`
